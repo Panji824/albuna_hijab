@@ -127,7 +127,7 @@ const HomePage = ({ data }) => {
                     <div className="footer-links">
                         <h4 className="footer-heading">Quick Links</h4>
                         <ul>
-                            {footer.quickLinks.map(link => <li key={link}><a href="#">{link}</a></li>)}
+                            {footer.quickLinks.map(link => <li key={link}><a href="#top">{link}</a></li>)}
                         </ul>
                     </div>
                     <div className="footer-contact">
