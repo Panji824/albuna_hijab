@@ -38,16 +38,7 @@ const Navbar = ({ links, logo }) => {
             </nav>
 
             {/* Ikon Aksi */}
-            <div className="navbar-icons">
-                <button className="icon-btn search-btn" aria-label="Search">
-                    <SearchIcon />
-                </button>
-                <button className="icon-btn cart-btn" aria-label={`Cart with ${cartCount} items`}>
-                    <CartIcon itemCount={cartCount} />
-                    {/* Badge untuk Keranjang */}
-                    {cartCount > 0 && <span className="cart-badge">{cartCount}</span>}
-                </button>
-            </div>
+
             
             {/* Tombol menu untuk mobile (akan diimplementasikan nanti) */}
             <button className="menu-toggle-btn" aria-label="Toggle menu">
