@@ -1,0 +1,134 @@
+/* ----------------------------------- */
+/* 1. Global Reset & Konfigurasi */
+/* ----------------------------------- */
+:root {
+    /* Palet Warna */
+    --color-primary: #DB2777;      
+    --color-primary-light: #F472B6; 
+    --color-dark: #374151;         
+    --color-text: #4B5563;         
+    --color-bg-light: #F9FAFB;     
+    --font-family-sans: Inter, system-ui, sans-serif;
+}
+
+/* Mengaktifkan Smooth Scrolling dan menggunakan font yang konsisten */
+html {
+    scroll-behavior: smooth;
+    font-family: var(--font-family-sans);
+    line-height: 1.6;
+    color: var(--color-text);
+}
+
+body {
+    margin: 0;
+    background-color: white;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Offset untuk semua section agar tidak tertutup Navbar fixed */
+.section {
+    scroll-margin-top: 80px; 
+    padding: 60px 5%;
+    min-height: 100vh;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* ----------------------------------- */
+/* 2. Navbar Styling (Global Component) */
+/* ----------------------------------- */
+.navbar-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+}
+
+.navbar-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.navbar-links {
+    display: none; 
+    gap: 30px;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: var(--color-dark);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-item:hover {
+    color: var(--color-primary);
+}
+
+.navbar-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-dark);
+    padding: 8px;
+    transition: color 0.3s;
+    position: relative; 
+}
+
+.icon-btn:hover {
+    color: var(--color-primary);
+}
+
+.cart-badge {
+    position: absolute;
+    top: 5px;
+    right: 0px;
+    background-color: var(--color-primary); 
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 700;
+    line-height: 1;
+    padding: 4px 7px;
+    border-radius: 50%;
+    transform: translate(30%, -30%); 
+    min-width: 18px;
+    text-align: center;
+    box-shadow: 0 0 0 2px white; 
+}
+
+.menu-toggle-btn {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .navbar-links {
+        display: flex; 
+    }
+}
+@media (max-width: 767px) {
+    .menu-toggle-btn {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: var(--color-dark);
+        font-size: 1.5rem;
+    }
+}

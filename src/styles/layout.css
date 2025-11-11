@@ -1,0 +1,309 @@
+/* ----------------------------------- */
+/* HERO SECTION (ID: about) */
+/* ----------------------------------- */
+.hero-section {
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column; 
+    gap: 40px;
+    text-align: center;
+}
+
+.hero-main-title {
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--color-dark);
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.vision-mission-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.sub-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 8px;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Desktop Hero Layout (2 Kolom) */
+@media (min-width: 992px) {
+    .hero-section {
+        flex-direction: row;
+        text-align: left;
+        align-items: center;
+        gap: 80px;
+    }
+    .hero-content {
+        flex: 1.5; 
+    }
+    .hero-image-col {
+        flex: 1; 
+    }
+    .vision-mission-container {
+        flex-direction: row; 
+        gap: 30px;
+    }
+}
+
+/* ----------------------------------- */
+/* PROMO & NEW ARRIVALS SECTION (ID: promo) */
+/* ----------------------------------- */
+.promo-new-arrivals-section {
+    padding: 0; /* Hapus padding section agar banner pink bisa full */
+    min-height: auto;
+    display: flex; /* Aktifkan flex container */
+    flex-direction: column; 
+    max-width: none; /* Biarkan melebar penuh */
+    margin: 0;
+    gap: 40px;
+}
+
+/* Kolom Kiri: Promo Banner Pink */
+.promo-box {
+    background-color: var(--color-primary); 
+    color: white;
+    padding: 60px 5%;
+    flex: 1; 
+    text-align: left;
+    max-width: 100%;
+}
+
+.promo-tag-label {
+    display: inline-block;
+    background-color: white;
+    color: var(--color-primary);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-size: 0.8rem;
+}
+
+.promo-offer {
+    font-size: 4rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+.promo-tagline {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.promo-description {
+    font-size: 1rem;
+    margin-bottom: 30px;
+}
+
+.promo-btn {
+    background-color: white;
+    color: var(--color-primary);
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.2s;
+    display: inline-block;
+}
+.promo-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Kolom Kanan: New Arrivals */
+.new-arrivals-container {
+    padding: 40px 5%;
+    background-color: white; 
+    flex: 1; 
+}
+
+.new-arrivals-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-dark);
+    margin-bottom: 5px;
+}
+
+.new-arrivals-subtitle {
+    font-size: 1rem;
+    color: var(--color-text);
+    margin-bottom: 20px;
+}
+
+.new-arrivals-grid {
+    display: grid;
+    /* Hanya 2 kolom di semua ukuran agar terlihat seperti galeri kecil */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px;
+}
+
+/* Desktop: Layout 2 Kolom */
+@media (min-width: 992px) {
+    .promo-new-arrivals-section {
+        flex-direction: row; 
+        min-height: 550px; 
+        display: grid;
+        grid-template-columns: 1.2fr 1fr; /* Rasio lebar */
+    }
+    .promo-box {
+        padding: 60px 5%; /* Pastikan padding konsisten */
+    }
+    .new-arrivals-container {
+        padding: 60px 40px;
+    }
+}
+
+
+/* ----------------------------------- */
+/* PRODUCTS COLLECTION (ID: products) */
+/* ----------------------------------- */
+.products-collection-section {
+    background-color: white; /* Default background untuk section collection */
+    text-align: center;
+}
+
+.products-collection-section .section-title {
+    text-align: left; /* Judul ke kiri */
+    margin-bottom: 30px;
+}
+
+.product-filters {
+    text-align: left; /* Geser ke kiri sesuai desain */
+    margin-bottom: 40px;
+}
+
+.filter-btn {
+    background-color: white;
+    color: var(--color-dark);
+    border: none;
+    padding: 8px 16px;
+    margin-right: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.filter-btn.active {
+    background-color: var(--color-primary);
+    color: white;
+}
+.filter-btn:not(.active):hover {
+    background-color: var(--color-bg-light);
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 30px;
+    margin-top: 30px;
+    text-align: left; /* Biarkan kartu produk mengatur dirinya sendiri */
+}
+
+.view-more-container {
+    margin-top: 40px;
+}
+
+.view-more-link {
+    color: var(--color-primary);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 2px solid var(--color-primary);
+    padding-bottom: 2px;
+    transition: border-color 0.2s;
+}
+.view-more-link:hover {
+    border-color: transparent;
+}
+
+
+/* ----------------------------------- */
+/* FOOTER SECTION (ID: contact-us) */
+/* ----------------------------------- */
+.footer-section {
+    background-color: var(--color-dark);
+    color: white;
+    padding: 60px 5%;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 30px;
+    margin-bottom: 20px;
+}
+
+.footer-logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-primary-light);
+    flex-basis: 100%;
+}
+
+.footer-heading {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--color-primary-light);
+}
+
+.footer-links ul, .footer-contact {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 8px;
+}
+
+.footer-links ul li a {
+    color: #D1D5DB; 
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-links ul li a:hover {
+    color: var(--color-primary-light);
+}
+
+.footer-contact p {
+    margin-bottom: 10px;
+    color: #D1D5DB;
+}
+
+.footer-bottom {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #9CA3AF; 
+}
+
+@media (min-width: 768px) {
+    .footer-content {
+        justify-content: space-around;
+    }
+    .footer-logo {
+        flex-basis: auto; 
+    }
+    .footer-content > div {
+        flex-basis: 20%; 
+    }
+}

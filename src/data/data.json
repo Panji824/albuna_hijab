@@ -1,0 +1,38 @@
+{
+  "general": {
+    "logo": "Elegant Hijab",
+    "currency": "Rp"
+  },
+  "navbar": {
+    "links": [
+      {"name": "About", "href": "#about"},
+      {"name": "Promo", "href": "#promo"},
+      {"name": "Products", "href": "#products"},
+      {"name": "Contact Us", "href": "#contact-us"}
+    ]
+  },
+  "heroSection": {
+    "title": "Elegance Meets Modesty",
+    "vision": "To become the leading destination for premium quality scarves and hijabs, empowering women to express their style with confidence and grace.",
+    "mission": "We are committed to providing exceptional quality pasmina and jilbab segi empat that combine traditional craftsmanship with contemporary design. Every piece is carefully curated to ensure comfort, durability, and timeless elegance for the modern woman."
+  },
+  "promoSection": {
+    "offer": "30% OFF",
+    "tagline": "On All Pashmina Collection",
+    "description": "Discover our premium pashmina scarves at unbeatable prices. Offer valid until the end of this month!"
+  },
+  "products": [
+    { "id": "P001", "name": "Premium Silk Pashmina - Navy", "price": 209000, "tag": "Sale", "image": "p1.jpg", "category": "Pashmina" },
+    { "id": "P002", "name": "Jilbab Segi Empat - Rose", "price": 149000, "tag": "New", "image": "p2.jpg", "category": "Jilbab Segi Empat" },
+    { "id": "P003", "name": "Soft Pashmina - Beige", "price": 199000, "tag": "Best Seller", "image": "p3.jpg", "category": "Pashmina" },
+    { "id": "P004", "name": "Cotton Jilbab - Black", "price": 129000, "tag": "New", "image": "p4.jpg", "category": "Jilbab Segi Empat" },
+    { "id": "P005", "name": "Premium Pashmina - Coral", "price": 279000, "tag": "Sale", "image": "p5.jpg", "category": "Pashmina" },
+    { "id": "P006", "name": "Jilbab Segi Empat - Lavender", "price": 169000, "tag": "New", "image": "p6.jpg", "category": "Jilbab Segi Empat" }
+  ],
+  "footer": {
+    "address": "Jl. Merdeka No. 123, Jakarta, Indonesia",
+    "phone": "+62 812-3456-7890",
+    "email": "info@eleganthijab.com",
+    "quickLinks": ["About Us", "Shop", "New Arrivals", "Sale", "Blog"]
+  }
+}
