@@ -8,7 +8,7 @@ const formatRupiah = (number) => {
 
 const ProductCard = ({ product, currency }) => {
     // Destructuring data produk
-    const { name, price, tag, image } = product;
+    const { name, price, tag, image_url } = product;
     // Kelas tag disesuaikan untuk CSS Vanilla
     const tagClass = tag ? tag.toLowerCase().replace(/ /g, '-') : '';
 
@@ -18,10 +18,10 @@ const ProductCard = ({ product, currency }) => {
             <div className="product-image-container">
                 {/* Placeholder gambar, ganti dengan path sebenarnya di folder public/assets/images/ */}
                 <img 
-                    src={`/assets/images/${image || 'default.jpg'}`} 
-                    alt={name} 
-                    className="product-image" 
-                />
+                        src={image_url || `/assets/images/${product.image || 'default.jpg'}`} // Fallback untuk dev statis
+                        alt={name} 
+                        className="product-image" 
+                    />
                 {/* Tag produk (New, Sale, dll) */}
                 {tag && (
                     <span className={`product-tag ${tagClass}`}>
