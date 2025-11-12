@@ -6,7 +6,7 @@ import React from "react";
 
 const Navbar = ({ links, logo }) => {
   // State dummy untuk jumlah item keranjang
-  const [cartCount] = React.useState(3);
+  
 
   return (
     <header className="navbar-container">
