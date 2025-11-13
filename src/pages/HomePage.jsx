@@ -71,7 +71,7 @@ const HomePage = ({ data: staticData }) => {
                     </div>
                 </div>
                 <div className="hero-image-col">
-                    <img src="/assets/images/model-hero.jpg" alt="Elegance Meets Modesty" className="hero-image" />
+                    <img src="../assets/images/model-hero.jpg" alt="Elegance Meets Modesty" className="hero-image" />
                 </div>
             </section>
 
@@ -130,16 +130,12 @@ const HomePage = ({ data: staticData }) => {
                         />
                     ))}
                 </div>
-                {/* Tombol view more untuk navigasi ke halaman produk penuh (jika ada) */}
-                <div className="view-more-container">
-                    <a href="/products" className="view-more-link">View All Products</a>
-                </div>
             </section>
 
             {/* Section 4: FOOTER (ID: contact-us) */}
             <footer id="contact-us" className="footer-section">
                 <div className="footer-content">
-                    <div className="footer-logo">{general.logo}</div>
+                    <div className="footer-logo">{general.title}</div>
                     <div className="footer-links">
                         <h4 className="footer-heading">Quick Links</h4>
                         <ul>
@@ -149,12 +145,12 @@ const HomePage = ({ data: staticData }) => {
                     <div className="footer-contact">
                         <h4 className="footer-heading">Contact Us</h4>
                         <p>📍 {footer.address}</p>
-                        <p>📞 {footer.phone}</p>
+                        <p>📞{footer.whatsapp} </p>
                         <p>📧 {footer.email}</p>
                     </div>
                 </div>
                 <div className="footer-bottom">
-                    &copy; {new Date().getFullYear()} {general.logo}. All rights reserved.
+                    &copy; {new Date().getFullYear()} {general.title}. All rights reserved.
                 </div>
             </footer>
         </div>

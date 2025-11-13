@@ -55,14 +55,25 @@ body {
     padding: 0 5%;
 }
 
+.navbar-branding {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 .navbar-logo {
+    height: 40px;
+    width: auto;
+}
+
+.navbar-title {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--color-primary);
 }
 
 .navbar-links {
-    display: none; 
+    display: none;
     gap: 30px;
 }
 

@@ -1,6 +1,7 @@
 {
   "general": {
-    "logo": "Albuna Hijab",
+    "title": "Albuna Hijab",
+    "logo": "../assets/images/albuna_logo.png",
     "currency": "Rp"
   },
   "navbar": {
@@ -31,8 +32,8 @@
   ],
   "footer": {
     "address": "Jl. Merdeka No. 123, Jakarta, Indonesia",
-    "phone": "+62 812-3456-7890",
-    "email": "info@eleganthijab.com",
+    "whatsapp": "+62 812-3456-7890",
+    "email": "info@albuna_hijab.com",
     "quickLinks": ["About Us", "Shop", "New Arrivals", "Sale", "Blog"]
   }
 }
