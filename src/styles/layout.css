@@ -307,24 +307,3 @@
         flex-basis: 20%; 
     }
 }
-.reveal-element {
-    /* Set transition properties for a smooth effect */
-    transition: 
-        opacity 0.8s ease-out, 
-        transform 0.8s ease-out;
-    
-    /* Start position: 40px below final position */
-    transform: translateY(40px);
-    
-    /* Start invisible */
-    opacity: 0;
-}
-
-/* 2. Revealed State (Triggered by JS when section is visible) */
-.reveal-element.revealed {
-    /* Final position: back to normal */
-    transform: translateY(0);
-    
-    /* Final state: fully opaque */
-    opacity: 1;
-}

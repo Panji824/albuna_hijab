@@ -1,25 +1,36 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 
-// This component wraps your standard HTML section
 const AnimatedSection = ({ children, id, className, threshold = 0.5 }) => {
     const ref = useRef(null);
-    // useInView: detects if the element is currently visible in the viewport
-    const isInView = useInView(ref, { amount: threshold, once: false });
+    
+    // 1. CRITICAL CHANGE: Set once: true. Animation will trigger ONLY the first time it enters the viewport.
+    const isInView = useInView(ref, { amount: threshold, once: true });
 
-    // Determine the state for CSS/class application
-    const animationStateClass = isInView ? 'is-active' : 'is-inactive';
-
+    // The animationStateClass and transition properties are kept as they are good practice, 
+    // but the core logic is now driven by 'isInView' (a boolean that only turns true once).
+    
     return (
         <motion.section 
             id={id}
             ref={ref}
-            className={`${className} ${animationStateClass}`}
+            className={className} 
             
-            // Framer Motion's built-in animation properties
+            // Initial state (Hidden: opacity 0, offset 50px down)
             initial={{ opacity: 0, y: 50 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-            transition={{ type: "spring", stiffness: 100, damping: 20, duration: 0.5 }}
+            
+            // 2. CRITICAL CHANGE: Use the target state directly. 
+            // Framer Motion automatically transitions from 'initial' to 'animate' when 'isInView' is true.
+            // Since 'once' is true, it never reverts back to the 'initial' state.
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            
+            transition={{ 
+                type: "spring", 
+                stiffness: 100, 
+                damping: 20, 
+                duration: 0.5,
+                delay: 0.1 // Optional: Add a slight delay for better visual flow
+            }}
         >
             {children}
         </motion.section>
