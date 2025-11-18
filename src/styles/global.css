@@ -62,9 +62,18 @@ body {
 }
 
 .navbar-logo {
-    height: 40px;
-    width: auto;
+    /* Menggunakan ukuran tetap untuk container SVG */
+    height: 35px; 
+    width: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+.logo-img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+}   
 
 .navbar-title {
     font-size: 1.5rem;

@@ -1,6 +1,9 @@
 
 import React from "react";
 
+import logoUrl from '../assets/images/logo.png';
+
+
 
 
 
@@ -10,8 +13,9 @@ const Navbar = ({ links, title, logo }) => {
       <div className="navbar-branding">
       <div className="navbar-logo">
         <img 
-        src={logo} 
-        alt="Logo" 
+        src={logoUrl} 
+        alt="logo"
+        className="logo-img"
         />
       </div>
       <h1 className="navbar-title">{title}</h1>

@@ -1,25 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import ProductCard from '../components/ProductCard'; 
 import { fetchHomePageData } from '../utils/apiservice';
+import AnimatedSection from '../animation/AnimateSection'; 
+
 const HomePage = ({ data: staticData }) => {
-    // Destructuring data statis (untuk fallback dan footer)
     const { heroSection, footer, general, promoSection: staticPromo } = staticData;
-    
-    // States untuk menyimpan data dinamis (dengan fallback data statis)
     const [products, setProducts] = useState(staticData.products || []);
     const [promotions, setPromotions] = useState(staticPromo);
     const [isLoading, setIsLoading] = useState(true);
-
     const [activeCategory, setActiveCategory] = useState('All Products'); 
     
     useEffect(() => {
         const loadData = async () => {
             setIsLoading(true);
-            // Panggil fungsi dari API Service
             const apiResult = await fetchHomePageData(); 
             
             if (apiResult.success) {
-                // Update state jika pengambilan data berhasil
                 if (apiResult.products && apiResult.products.length > 0) {
                     setProducts(apiResult.products);
                 }
@@ -47,16 +43,16 @@ const HomePage = ({ data: staticData }) => {
     if (isLoading) {
         return (
             <div style={{ textAlign: 'center', padding: '100px' }}>
-                <h2>Memuat data dari server...</h2>
-                <p>Pastikan server Django Anda berjalan di http://127.0.0.1:8000</p>
+                <h2></h2>
+                
             </div>
         );
     }
 
     return (
         <div className="home-page-container">
-            {/* Section 1: HERO & VISION/MISSION (ID: about) */}
-            <section id="about" className="section hero-section">
+            
+            <AnimatedSection id="about" className="section hero-section" threshold={0.5}>
                 <div className="hero-content">
                     <h2 className="hero-main-title">{heroSection.title}</h2>
                     <div className="vision-mission-container">
@@ -73,12 +69,9 @@ const HomePage = ({ data: staticData }) => {
                 <div className="hero-image-col">
                     <img src="../assets/images/model-hero.jpg" alt="Elegance Meets Modesty" className="hero-image" />
                 </div>
-            </section>
+            </AnimatedSection>
 
-            {/* Section 2: PROMO & NEW ARRIVALS (ID: promo) */}
-            <section id="promo" className="promo-new-arrivals-section">
-                
-                {/* Kolom Kiri: Promo Banner (Menggunakan State/Data Dinamis) */}
+            <AnimatedSection id="promo" className="promo-new-arrivals-section" threshold={0.5}>
                 <div className="promo-box">
                     <span className="promo-tag-label">Limited Time Offer</span>
                     <h2 className="promo-offer">{promotions.title || staticPromo.offer}</h2>
@@ -87,7 +80,6 @@ const HomePage = ({ data: staticData }) => {
                     <a href="#products" className="promo-btn">Shop Now &rarr;</a>
                 </div>
 
-                {/* Kolom Kanan: New Arrivals (Menggunakan State/Data Dinamis) */}
                 <div className="new-arrivals-container">
                     <h3 className="new-arrivals-title">New Arrivals</h3>
                     <p className="new-arrivals-subtitle">Discover our latest collection</p>
@@ -101,13 +93,11 @@ const HomePage = ({ data: staticData }) => {
                         ))}
                     </div>
                 </div>
-            </section>
+            </AnimatedSection>
 
-            {/* Section 3: OUR COLLECTION (ID: products) */}
-            <section id="products" className="section products-collection-section">
+            <AnimatedSection id="products" className="section products-collection-section" threshold={0.3}>
                 <h2 className="section-title">Our Collection</h2>
                 
-                {/* Filter Buttons */}
                 <div className="product-filters">
                     {categories.map(cat => (
                         <button 
@@ -120,7 +110,6 @@ const HomePage = ({ data: staticData }) => {
                     ))}
                 </div>
                 
-                {/* Grid Produk yang sudah difilter */}
                 <div className="product-grid">
                     {filteredProducts.map(product => (
                         <ProductCard 
@@ -130,9 +119,8 @@ const HomePage = ({ data: staticData }) => {
                         />
                     ))}
                 </div>
-            </section>
+            </AnimatedSection>
 
-            {/* Section 4: FOOTER (ID: contact-us) */}
             <footer id="contact-us" className="footer-section">
                 <div className="footer-content">
                     <div className="footer-logo">{general.title}</div>
